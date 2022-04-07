@@ -1,8 +1,16 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
+import router from './router'
+import store from './store'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
-Vue.config.productionTip = false
+import './styles/app-styles.scss'
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+const app = createApp(App)
+
+app.use(router)
+app.use(store)
+app.use(VueAxios, axios)
+
+app.mount('body')
