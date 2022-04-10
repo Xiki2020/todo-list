@@ -13,7 +13,7 @@ export default {
 	},
 	state() {
 		return {
-			todoList: JSON.parse(localStorage.getItem('todoList')),
+			todoList: JSON.parse(localStorage.getItem('todoList')) || [],
 		}
 	},
 	getters: {
